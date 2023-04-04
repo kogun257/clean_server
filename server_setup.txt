@@ -1,0 +1,112 @@
+・ssh開けとく
+sudo raspi-config
+※できればssh公開認証鍵を設定しとく
+
+・ラズパイのユーザー設定
+ユーザー名serverを作成して、パスワードを設定する(rootはk_27,serverはk_12かな)
+
+sudo apt-get update && sudo apt-get upgrade
+
+必要モジュールをインストール
+sudo apt-get -y install apache2 php
+
+sudo apt-get -y install mariadb-server php-mysql
+
+・一括コマンド
+sudo apt-get update && sudo apt-get -y upgrade
+sudo apt-get -y install apache2 php mariadb-server php-mysql
+
+
+
+・ファイルの権限とパーミッション
+phpファイルをコピーする前にwwwとwww/htmlのパーミッションを777にしないとコピーできない
+
+phpファイルはパーミッションを644にしとけばいい
+cssとjsファイルのパーミッションは754で、権限をpi:www-data
+
+・画像保存用のディレクトリ
+tmp/s_img
+※ディレクトリのパーミッションは774で、権限はpi:www-data
+
+
+
+〜mysqlの初期設定〜
+http://nort-wmli.blogspot.com/2019/06/raspberry-pi-mysqlmariadb.html
+↑これに書いてある
+
+・プラグインの無効化
+sudo mysql -u root
+
+#mysqlコマンド
+USE mysql;
+
+SELECT Host,User,Password,plugin FROM user;     #プラグインの確認
+
+UPDATE user SET plugin='' WHERE User='root';    #プラグインの削除
+
+SELECT Host,User,Password,plugin FROM user;     #プラグインが削除されたことの確認
+exit
+
+#linuxコマンド
+sudo systemctl restart mysql
+mysql -u root     #sudoなしでrootでログインできるのを確認
+
+
+・データベースの初期設定
+mysql_secure_installation     #rootユーザーのパスワードをk_12にする
+
+
+・一般ユーザーの作成
+mysql -u root -p       #パスワードでログイン
+
+#mysqlコマンド
+CREATE USER 'server'@'%' IDENTIFIED BY 'hikaru12';     #serverはh_12にする
+exit
+
+#linuxコマンド
+mysql -u server -phikaru12      #ログインできるか確認
+
+
+・データベースの作成
+mysql -u root -p
+
+#mysqlコマンド
+CREATE DATABASE test;
+
+GRANT ALL PRIVILEGES ON test.* TO server@'%';
+
+リモートログインはなしにする
+
+～mysqlのデータベースの設定方法～
+・テーブルの項目を見たいとき
+show columns from [テーブル名];
+
+・テーブルのデータを見たいとき
+select * from [テーブル名];
+
+・データを初期化したいとき
+truncate table [テーブル名];
+
+・テーブル内容
+create table [テーブル名](id int auto_increment,
+lat double(8,6),
+lng double(9,6),
+subject set('rubble','wood','constWaste','plastWaste','other'),
+comment varchar(255),
+datetime datetime,
+image_title varchar(128),
+image_path varchar(255),
+index(id)
+);
+
+・現在使ってるsqlのテーブルの中身
+create table db_test(id int auto_increment,
+lat double(8,6),
+lng double(9,6),
+subject set('rubble','wood','constWaste','plastWaste','other'),
+comment varchar(255),
+datetime datetime,
+image_title varchar(128),
+image_path varchar(255),
+index(id)
+);
