@@ -1,0 +1,53 @@
+﻿@charset "utf-8";
+/*iPad用(縦画面)の画面表示設定*/
+@media (max-width: 810px){
+	.head-form{
+		width: 400px;
+		text-align: center;
+		font-size:25px;
+		padding-top: 5px;
+	}
+	.input_area{
+		width: 770px;
+		padding: 20px;
+	}
+
+	.item{
+		margin-bottom: 20px;
+	}
+	.label{
+		width:100px;
+		margin-top: 1px;
+		font-size: 25px;
+	}
+}
+
+/*iPhone6/7/8 Plus用(縦画面)の画面表示設定*/
+@media (max-width: 414px){
+
+}
+
+/*iPhone6/7/8用(縦画面)の画面表示設定*/
+@media (max-width: 376px){	/*max-widthが810pxから反映されるようになってる*/
+	.head-form{
+		width: 200px;
+		text-align: center;
+		font-size:20px;
+		padding-top: 5px;
+	}
+	.input_area{
+		width: 335px;
+		height: 500px;
+		padding-top: 10px;
+	}
+	.item{
+		height: 90%;
+		overflow: hidden;
+		margin-bottom: 20px;
+	}
+	.label{
+		width:50px;
+		padding-left: 10px;
+		font-size: 20px;
+	}
+}

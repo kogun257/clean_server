@@ -1,0 +1,23 @@
+#!/bin/sh
+
+LOG_COPY=/home/pi/log/copy_log.log
+
+files='/var/www/html/tmp/s_img/*'
+# cpy_dir='/media/pi/usb/img'
+cpy_dir='/home/pi'
+
+date=$(date '+%Y-%m-%d_%T')
+# ''で囲むと文字列として認識されないので、""で囲むこと！！
+echo -e "\nCopied datetime -> ${date}" >>$LOG_COPY     # 改行と日付を同時に記録
+
+index=1
+for f_path in $files; do
+    cp -a -f -p $f_path $cpy_dir
+
+    f_name=$(basename $f_path)  # コピーしたファイル名のみを取り出している
+    f_log=$(printf "%02d:$f_name" ${index}) #数字の二桁目を0埋めしたいがために書いたやつ
+
+    # echo "$index:$f_name" >>$LOG_COPY   # ファイル名に番号を割り振って記録
+    echo $f_log >>$LOG_COPY
+    index=$((++index))
+done

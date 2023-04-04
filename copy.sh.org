@@ -1,0 +1,17 @@
+#!/bin/sh
+
+LOG_COPY=/home/pi/log/copy_log.log
+
+files='/var/www/html/tmp/s_img/*'
+# cpy_dir='/media/pi/usb/img'     #本来の保存先
+cpy_dir='/home/pi/img'  # テスト用
+
+date=$(date '+%Y-%m-%d_%T')
+echo $date >>$LOG_COPY
+
+for f_path in $files; do
+    # echo $f_name
+    cp -a -f -p $f_path $cpy_dir
+    f_name=$(basename $f_path)
+    echo $f_name >>$LOG_COPY
+done

@@ -1,0 +1,72 @@
+﻿.list_area{
+  width:1200px;
+  margin:0 auto;
+  padding: 20px;
+  background-color:#CCCC99;
+}
+.item{
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.label{
+  float: left;
+  margin-top: 5px;
+  margin-right: 10px;
+  width:100px;
+  border-left: solid 3px #e0505d;
+  padding-left: 10px;
+}
+#map {
+    width: 100%;
+    height: 400px;
+}
+.lmap_area{
+  float: left;
+  width: 1050px;
+}
+/*jsファイルで表示されるグーグルマップ上のinfoWindow*/
+#infoWindow{    
+  width: 100%;
+  text-align: center;
+}
+/*jsファイルで表示されるグーグルマップ上のnumberWindow*/
+#numberWindow{
+  font-size: 20px;
+}
+table {
+border-collapse: collapse;
+}
+table, th, td {
+border: 3px solid gray;
+}
+.id{
+  text-align: center;
+}
+.lat, .lng{
+  width: 110px;
+  text-align: center;
+}
+.subject{
+  width: 140px;
+  text-align: center;
+}
+.comment{
+  width: 200px;
+}
+.datetime{
+  width: 250px;
+}
+.image {
+  width: 200px;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis; /* Safari */
+  -o-text-overflow: ellipsis; /* Opera */
+}
+.testp {
+  width: 500px;
+  padding: 10px;
+  line-height: 1.0;
+  text-overflow: clip;
+  -webkit-text-overflow: ellipsis; /* Safari */
+  -o-text-overflow: ellipsis; /* Opera */
+}

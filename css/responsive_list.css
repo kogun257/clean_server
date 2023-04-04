@@ -1,0 +1,81 @@
+﻿@charset "utf-8";
+
+/*iPad用(縦画面)の画面表示設定*/
+@media (max-width: 1024px){	/*max-widthが810pxから反映されるようになってる*/
+	.list_area{
+		width: 770px;
+		padding: 20px;
+	}
+	.item{
+		margin-bottom: 10px;
+	}
+	.label{
+		width: 200px;
+		height: 30px;
+		font-size: 30px;
+	}
+	.lmap_area{
+		width: 100%;
+		height: 900px;
+		padding-right: 10px;
+	}
+	#map {
+		width: 100%;
+		height: 100%;
+	}
+	.datetime{
+		width: 220px;
+	}
+}
+
+/*iPhone6/7/8 Plus用(縦画面)の画面表示設定*/
+@media (max-width: 415px){
+	.list_area{
+		width: 414px;
+		padding: 10px;
+	}
+	.item{
+		margin-bottom: 10px;
+	}
+	.label{
+		width: 200px;
+		height: 30px;
+		font-size: 30px;
+	}
+	.lmap_area{
+		width: 100%;
+		height: 700px;
+		padding-right: 10px;
+	}
+	#map {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/*iPhone6/7/8用(縦画面)の画面表示設定*/
+@media (max-width: 376px){
+	.list_area{
+		width: 375px;
+		padding: 10px;
+	}
+	.item{
+		margin-bottom: 10px;
+	}
+	.label{
+		width: 200px;
+		height: 30px;
+		font-size: 27px;
+	}
+	.lmap_area{
+		width: 100%;
+		height: 700px;
+		padding-right: 10px;
+	}
+	#map {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
