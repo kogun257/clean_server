@@ -77,7 +77,7 @@ for($n=0; $n<$data_length; $n++){
                 </div>
   					    <!--googleMapの表示に必要なJSファイル-->
   					    <script src="js/jquery-3.3.1.min.js"></script>
-  					    <script src="https://maps.googleapis.com/maps/api/js?key= "></script>
+  					    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
   					    <script src="js/list.js"></script>
 
                 <div class="item">
