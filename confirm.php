@@ -189,7 +189,7 @@ require_once("./properties.php");
 
         }
       </script>
-      <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAOhP3cXmIts-lg7K2T2HUDCKpGpUq8nrI&callback=initMap" async></script>
+      <script src="//maps.googleapis.com/maps/api/js?key==initMap" async></script>
     </div>
 
   <!--被写体の表示-->
