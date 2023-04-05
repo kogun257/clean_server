@@ -17,7 +17,7 @@
         <p class="head-form">入力が完了しました</p>
 
 	      <div class="input_area">
-	        <form action="./index2.php" method="post" id="contact_form">
+	        <form action="./index.php" method="post" id="contact_form">
 
           <p><?php
               $var = "入力ありがとうございました!";

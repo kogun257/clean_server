@@ -248,7 +248,7 @@ echo $ext . "<br>";
 				  
 				  <!--googleMapの表示に必要なJavaScriptの記述-->
 				  <script src="js/jquery-3.3.1.min.js"></script>
-                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOhP3cXmIts-lg7K2T2HUDCKpGpUq8nrI"></script>
+                  <script src="https://maps.googleapis.com/maps/api/js?key= "></script>
                   <script src="js/index.js"></script>
 
 

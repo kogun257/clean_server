@@ -73,7 +73,7 @@ mysql -u root -p
 #mysqlコマンド
 CREATE DATABASE test;
 
-GRANT ALL PRIVILEGES ON test.* TO server@'%';
+GRANT ALL ON test.* TO server@localhost;
 
 リモートログインはなしにする
 
